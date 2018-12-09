@@ -16,13 +16,13 @@ namespace GoldRush.Infrastructure.Security.Requirements
 
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, TenantAdministratorRequirement requirement)
         {
-            if(!context.User.HasClaim(c => c.Type == ClaimTypes.Email && c.Issuer == configuration["AdminTokenAuthentication:Issuer"]))
+            if (!context.User.HasClaim(c => c.Type == ClaimTypes.Email && c.Issuer == configuration["AdminTokenAuthentication:Issuer"]))
             {
                 return Task.CompletedTask;
             }
 
             var email = context.User.FindFirst(c => c.Type == ClaimTypes.Email && c.Issuer == configuration["AdminTokenAuthentication:Issuer"]).Value;
-            if(email != string.Empty && email.Equals("whizkidwwe1217@live.com"))
+            if (email != string.Empty && email.Equals("admin@live.com"))
             {
                 context.Succeed(requirement);
             }

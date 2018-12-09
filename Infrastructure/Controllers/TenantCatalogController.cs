@@ -387,7 +387,7 @@ namespace GoldRush.Infrastructure.Controllers
               expires: expiryDate,
               signingCredentials: creds);
 
-            if (model.Email == "whizkidwwe1217@live.com" && model.Password == "12345678")
+            if (model.Email == "admin@live.com" && model.Password == "12345678")
             {
                 var result = await Task.FromResult(new
                 {

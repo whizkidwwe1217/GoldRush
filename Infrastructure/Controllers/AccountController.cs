@@ -34,8 +34,8 @@ namespace GoldRush.Infrastructure.Controllers
         private readonly Tenant tenant;
 
         public AccountController(DbContext dbContext, IConfiguration configuration,
-            IdentityUserManager userManager, 
-            SignInManager<User> signInManager, 
+            IdentityUserManager userManager,
+            SignInManager<User> signInManager,
             IEmailSender emailSender,
             ICompanyService companyService,
             Tenant tenant)
@@ -115,7 +115,7 @@ namespace GoldRush.Infrastructure.Controllers
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, "whizkidwwe1217@live.com"),
+                new Claim(JwtRegisteredClaimNames.Sub, "admin"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(CompanyClaimTypes.Company, user.CompanyId.ToString()),
                 new Claim(CompanyClaimTypes.Tenant, user.TenantId.ToString())
@@ -180,7 +180,7 @@ namespace GoldRush.Infrastructure.Controllers
                     };
 
                     var companies = await companyService.ListAsync();
-                    if(companies.Count == 0)
+                    if (companies.Count == 0)
                     {
                         var company = new Company
                         {
