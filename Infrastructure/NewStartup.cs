@@ -71,7 +71,7 @@ namespace GoldRush.Infrastructure
 
             services
                 .AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddCoreAssemblies(Configuration);
 
             container.Populate(services);

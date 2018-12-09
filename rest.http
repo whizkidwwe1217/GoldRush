@@ -5,4 +5,4 @@ GET https://localhost:5001/api/app/info
 GET https://localhost:5001/api/sample/info
 
 ###
-GET https://localhost:5001/api/values
+GET https://localhost:5001/api/money

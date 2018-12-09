@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>GoldRush.Infrastructure</RootNamespace>
     <AssemblyName>GoldRush.Infrastructure</AssemblyName>
@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="CompareNETObjects" Version="4.56.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.4" />
     <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
