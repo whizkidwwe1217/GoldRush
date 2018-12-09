@@ -24,17 +24,12 @@ namespace SimpleApp
         [Route("info")]
         public async Task<IActionResult> GetInfo()
         {
-            var tenant = tenantContext?.Tenant;
-            var hasCompany = false;
+            var deps = container.WhatDoIHave();
 
             return Ok(await Task.FromResult(new
             {
-                tenant,
-                isAdmin = tenant == null || (bool)tenant?.IsTenantAdministrator,
-                isTenant = tenant != null,
-                hasCompany,
                 tenantContext,
-                dependencies = container.WhatDoIHave()
+                dependencies = deps
             }));
         }
     }
