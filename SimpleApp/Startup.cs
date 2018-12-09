@@ -20,6 +20,7 @@ namespace SimpleApp
         {
         }
 
+        protected override bool UseDeveloperException => false;
         protected override bool UseSignalR => false;
         protected override bool UseSpa => false;
     }
